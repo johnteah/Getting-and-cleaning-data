@@ -54,5 +54,6 @@ summary_table <- df %>%
   group_by(subject_number, row_names$activity_name) %>%
   summarise_all(list(mean))
 
-write.csv(total_data, "./data/UCI HAR Tidy Dataset.csv")
-write.csv(summary_table, "./data/UCI HAR Summary.csv")
+# Write output files
+write.table(total_data, "./data/UCI HAR Tidy Dataset.txt", row.names = FALSE)
+write.table(summary_table, "./data/UCI HAR Summary.txt", row.names = FALSE)
